@@ -8,11 +8,13 @@ def feed():
     GPIO.setup(18, GPIO.OUT)
 
     try:
-        servo = GPIO.PWM(18,50)
-        servo.start(12.5)
+	freq = 100.0
+        servo = GPIO.PWM(18, freq)
+	sleep_time = 0.85
 
-        time.sleep(0.8)
-    
+        servo.start(20)
+        time.sleep(sleep_time)
+
     finally:
         if servo:
             servo.stop()
@@ -20,4 +22,4 @@ def feed():
 
 if __name__ == '__main__':
     feed()
-    
+

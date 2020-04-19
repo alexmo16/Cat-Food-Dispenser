@@ -10,9 +10,9 @@ def feed():
     try:
 	freq = 100.0
         servo = GPIO.PWM(18, freq)
-	sleep_time = 0.85
+	sleep_time = 0.86 * 2.0
 
-        servo.start(20)
+        servo.start(10)
         time.sleep(sleep_time)
 
     finally:
